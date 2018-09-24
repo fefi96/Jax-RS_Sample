@@ -25,4 +25,14 @@ public class PersonServiceImpl implements PersonService {
     public Person get(int id) {
         return list.get(id);
     }
+
+    @Override
+    public void add(Person person) {
+        list.add(person);
+    }
+
+    @Override
+    public void update(int id, Person person) {
+        list.set(id, person);
+    }
 }

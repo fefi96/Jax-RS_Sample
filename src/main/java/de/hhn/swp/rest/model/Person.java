@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class Person {
 
-    private String firstName, lastName;
+    private final String firstName, lastName;
 
-    private LocalDate dateOfBirth;
+    private final LocalDate dateOfBirth;
 
     public Person(String firstName, String lastName, LocalDate dateOfBirth) {
         this.firstName = firstName;
