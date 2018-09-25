@@ -4,9 +4,11 @@ import java.time.LocalDate;
 
 public class Person {
 
-    private final String firstName, lastName;
+    private String firstName, lastName;
 
-    private final LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;
+
+    public Person() { }
 
     public Person(String firstName, String lastName, LocalDate dateOfBirth) {
         this.firstName = firstName;
@@ -18,11 +20,23 @@ public class Person {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

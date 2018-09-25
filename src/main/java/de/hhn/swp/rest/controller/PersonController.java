@@ -4,12 +4,10 @@ import de.hhn.swp.rest.Service.PersonService;
 import de.hhn.swp.rest.model.Person;
 
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.*;
 import java.util.List;
+
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("persons")
 public class PersonController {
@@ -18,16 +16,29 @@ public class PersonController {
     private PersonService service;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
     public List<Person> getAll() {
         return service.getAll();
     }
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
     public Person get(@PathParam("id") int id) {
         return service.get(id);
+    }
+
+    @PUT
+    @Path("{id}")
+    @Consumes(APPLICATION_JSON)
+    public void update(@PathParam("id") int id, Person person) {
+        service.update(id, person);
+    }
+
+    @POST
+    @Consumes(APPLICATION_JSON)
+    public void create(Person person) {
+        service.add(person);
     }
 
 }
