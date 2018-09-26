@@ -39,4 +39,9 @@ public class PersonServiceImpl implements PersonService {
     public void update(int id, Person person) {
         list.set(id, person);
     }
+
+    @Override
+    public void delete(int id) {
+        list.remove(id);
+    }
 }

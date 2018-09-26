@@ -41,4 +41,10 @@ public class PersonController {
         service.add(person);
     }
 
+    @DELETE
+    @Path("{id}")
+    public void delete(@PathParam("id") int id) {
+        service.delete(id);
+    }
+
 }

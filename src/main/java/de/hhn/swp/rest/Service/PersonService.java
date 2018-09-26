@@ -15,4 +15,6 @@ public interface PersonService extends Serializable {
 
     void update(int id, Person person);
 
+    void delete(int id);
+
 }

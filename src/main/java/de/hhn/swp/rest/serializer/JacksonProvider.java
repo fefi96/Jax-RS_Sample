@@ -16,10 +16,9 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Produces(APPLICATION_JSON)
 public class JacksonProvider extends JacksonJsonProvider {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
     public JacksonProvider() {
         super();
+        final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new DateModule());
         setMapper(objectMapper);
     }
