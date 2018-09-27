@@ -28,17 +28,17 @@ public class PersonController {
         return service.get(id);
     }
 
+    @POST
+    @Consumes(APPLICATION_JSON)
+    public void create(Person person) {
+        service.add(person);
+    }
+
     @PUT
     @Path("{id}")
     @Consumes(APPLICATION_JSON)
     public void update(@PathParam("id") int id, Person person) {
         service.update(id, person);
-    }
-
-    @POST
-    @Consumes(APPLICATION_JSON)
-    public void create(Person person) {
-        service.add(person);
     }
 
     @DELETE
